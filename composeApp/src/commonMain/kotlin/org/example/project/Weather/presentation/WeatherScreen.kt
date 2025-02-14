@@ -25,6 +25,7 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import org.example.project.Weather.presentation.components.AdditionRow
 import org.example.project.Weather.presentation.components.TempRow
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -122,6 +123,9 @@ private fun WeatherScreen(
                                 horizontalArrangement = Arrangement.SpaceEvenly
                             ) {
                                 TempRow(
+                                    state = state.weather
+                                )
+                                AdditionRow(
                                     state = state.weather
                                 )
                             }

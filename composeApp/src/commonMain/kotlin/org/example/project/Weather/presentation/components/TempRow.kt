@@ -2,8 +2,12 @@ package org.example.project.Weather.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -34,33 +38,40 @@ fun TempRow(
             .background(color = MaterialTheme.colorScheme.surface),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = state.temperatureC.toString(),
-            style = MaterialTheme.typography.titleLarge
-        )
-        var imageLoadResult by remember { mutableStateOf<Result<Painter>?>(null) }
-        val painter = rememberAsyncImagePainter(
-            model = state.icon,
-            onSuccess = {
-                imageLoadResult = Result.success(it.painter)
-            },
-            onError = {
-                imageLoadResult = Result.failure(it.result.throwable)
+        Row(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp),
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
+            Text(
+                text = state.temperatureC.toString(),
+                style = MaterialTheme.typography.titleLarge
+            )
+            var imageLoadResult by remember { mutableStateOf<Result<Painter>?>(null) }
+            val painter = rememberAsyncImagePainter(
+                model = state.icon,
+                onSuccess = {
+                    imageLoadResult = Result.success(it.painter)
+                },
+                onError = {
+                    imageLoadResult = Result.failure(it.result.throwable)
+                }
+            )
+            val painterState by painter.state.collectAsStateWithLifecycle()
+            if (painterState is AsyncImagePainter.State.Loading) {
+                CircularProgressIndicator()
+            } else {
+                Image(
+                    painter = painter,
+                    contentDescription = state.condition,
+                    modifier = Modifier.alpha(1f)
+                )
             }
-        )
-        val painterState by painter.state.collectAsStateWithLifecycle()
-        if (painterState is AsyncImagePainter.State.Loading) {
-            CircularProgressIndicator()
-        } else {
-            Image(
-                painter = painter,
-                contentDescription = state.condition,
-                modifier = Modifier.alpha(1f)
+            Text(
+                text = state.condition,
+                style = MaterialTheme.typography.headlineMedium
             )
         }
-        Text(
-            text = state.condition,
-            style = MaterialTheme.typography.headlineMedium
-        )
     }
 }
