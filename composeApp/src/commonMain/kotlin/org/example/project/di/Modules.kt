@@ -1,5 +1,6 @@
 package org.example.project.di
 
+import org.example.project.Weather.data.network.KtorRemoteWeatherDataSource
 import org.example.project.Weather.data.repository.WeatherRepositoryImp
 import org.example.project.Weather.domain.repository.WeatherRepository
 import org.example.project.Weather.presentation.WeatherViewModel
@@ -15,6 +16,7 @@ expect val platformModule: Module
 val sharedModule = module {
     single { HttpClientFactory.create(get()) }
     singleOf(::WeatherRepositoryImp).bind<WeatherRepository>()
+    single{ KtorRemoteWeatherDataSource(get()) }
 
     viewModelOf(::WeatherViewModel)
 }

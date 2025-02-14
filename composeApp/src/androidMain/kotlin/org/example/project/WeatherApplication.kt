@@ -9,7 +9,7 @@ class WeatherApplication: Application() {
     override fun onCreate() {
         super.onCreate()
         initKoin{
-            androidContext(this@WeatherApplication)
+            //androidContext(this@WeatherApplication)
         }
     }
 }

@@ -38,7 +38,8 @@ class WeatherViewModel(
         when (action) {
             is WeatherAction.OnSearchQueryChange -> {
                 _state.update {
-                    it.copy(searchQuery = action.toString())
+                    it.copy(searchQuery = action.query.toString())
+
                 }
             }
         }
@@ -51,10 +52,8 @@ class WeatherViewModel(
             .distinctUntilChanged()
             .debounce(500L)
             .onEach { city ->
-                city?.let {
                     searchJob?.cancel()
                     searchJob = fetchWeather(city)
-                }
             }
     }
 
@@ -79,6 +78,5 @@ class WeatherViewModel(
                         )
                     }
                 }
-
     }
 }
