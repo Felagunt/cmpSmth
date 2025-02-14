@@ -21,7 +21,7 @@ class KtorRemoteWeatherDataSource(
             httpClient.get(
                 urlString = "$BASE_URL/v1/current.json"
             ) {
-                parameter("key", "fa57e7b1f1aa426e92c73659251302")
+                parameter("key", "")
                 parameter("q", city)
             }
         }

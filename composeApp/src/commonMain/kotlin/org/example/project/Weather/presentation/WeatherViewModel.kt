@@ -34,6 +34,17 @@ class WeatherViewModel(
             _state.value
         )
 
+    fun onAction(action: WeatherAction) {
+        when (action) {
+            is WeatherAction.OnSearchQueryChange -> {
+                _state.update {
+                    it.copy(searchQuery = action.toString())
+                }
+            }
+        }
+    }
+
+
     private fun observeSearchQuery() {
         state
             .map { it.searchQuery }
