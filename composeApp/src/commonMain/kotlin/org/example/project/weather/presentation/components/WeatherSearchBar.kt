@@ -76,7 +76,7 @@ fun WeatherSearchBar(
         modifier = modifier
             .background(
                 shape = RoundedCornerShape(100),
-                color = MaterialTheme.colorScheme.surfaceTint
+                color = MaterialTheme.colorScheme.surface
             )
             .minimumInteractiveComponentSize()
     )

@@ -1,5 +1,8 @@
 package org.example.project.weather.data.dto
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Current(
     val cloud: Int,
     val condition: Condition,
