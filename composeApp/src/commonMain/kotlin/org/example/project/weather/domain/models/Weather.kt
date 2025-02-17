@@ -1,4 +1,4 @@
-package org.example.project.Weather.domain.models
+package org.example.project.weather.domain.models
 
 data class Weather(
     val cityName: String,

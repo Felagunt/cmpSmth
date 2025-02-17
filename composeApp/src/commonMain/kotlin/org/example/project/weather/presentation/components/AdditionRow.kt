@@ -1,4 +1,4 @@
-package org.example.project.Weather.presentation.components
+package org.example.project.weather.presentation.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -15,7 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import org.example.project.Weather.domain.models.Weather
+import org.example.project.weather.domain.models.Weather
 
 @Composable
 fun AdditionRow(

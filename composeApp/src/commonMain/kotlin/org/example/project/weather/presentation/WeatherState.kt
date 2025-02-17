@@ -1,6 +1,6 @@
-package org.example.project.Weather.presentation
+package org.example.project.weather.presentation
 
-import org.example.project.Weather.domain.models.Weather
+import org.example.project.weather.domain.models.Weather
 
 data class WeatherState (
     val searchQuery: String = "Moscow",

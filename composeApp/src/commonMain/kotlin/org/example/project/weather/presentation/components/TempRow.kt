@@ -1,4 +1,4 @@
-package org.example.project.Weather.presentation.components
+package org.example.project.weather.presentation.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImagePainter
 import coil3.compose.rememberAsyncImagePainter
-import org.example.project.Weather.domain.models.Weather
+import org.example.project.weather.domain.models.Weather
 
 @Composable
 fun TempRow(

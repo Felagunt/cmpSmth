@@ -1,4 +1,4 @@
-package org.example.project.Weather.presentation
+package org.example.project.weather.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import org.example.project.Weather.domain.repository.WeatherRepository
+import org.example.project.weather.domain.repository.WeatherRepository
 import org.example.project.core.onError
 import org.example.project.core.onSuccess
 
@@ -58,6 +58,7 @@ class WeatherViewModel(
     }
 
     private fun fetchWeather(city: String) = viewModelScope.launch {
+        println(state.value.weather.toString())
             weatherRepository
                 .getCurrentWeather(city = city)
                 .onSuccess { weatherResult ->

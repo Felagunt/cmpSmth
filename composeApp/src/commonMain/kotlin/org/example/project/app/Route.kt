@@ -1,4 +1,4 @@
-package org.example.project.App
+package org.example.project.app
 
 import kotlinx.serialization.Serializable
 

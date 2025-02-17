@@ -1,4 +1,4 @@
-package org.example.project.Weather.data.dto
+package org.example.project.weather.data.dto
 
 data class Current(
     val cloud: Int,

@@ -1,14 +1,12 @@
-package org.example.project.App
+package org.example.project.app
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import org.example.project.Weather.presentation.WeatherScreenRoot
-import org.example.project.Weather.presentation.WeatherViewModel
+import org.example.project.weather.presentation.WeatherScreenRoot
+import org.example.project.weather.presentation.WeatherViewModel
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable

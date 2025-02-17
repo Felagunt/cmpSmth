@@ -1,4 +1,4 @@
-package org.example.project.Weather.presentation.components
+package org.example.project.weather.presentation.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background

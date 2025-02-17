@@ -1,7 +1,7 @@
-package org.example.project.Weather.data.mappers
+package org.example.project.weather.data.mappers
 
-import org.example.project.Weather.data.dto.WeatherResponseDTO
-import org.example.project.Weather.domain.models.Weather
+import org.example.project.weather.data.dto.WeatherResponseDTO
+import org.example.project.weather.domain.models.Weather
 
 fun WeatherResponseDTO.toWeather(): Weather {
     return Weather(

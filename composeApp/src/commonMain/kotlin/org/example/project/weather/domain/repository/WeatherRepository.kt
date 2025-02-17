@@ -1,6 +1,6 @@
-package org.example.project.Weather.domain.repository
+package org.example.project.weather.domain.repository
 
-import org.example.project.Weather.domain.models.Weather
+import org.example.project.weather.domain.models.Weather
 import org.example.project.core.DataError
 import org.example.project.core.Result
 
